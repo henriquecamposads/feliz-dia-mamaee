@@ -1,0 +1,406 @@
+/* Importa a fonte Montserrat do Google Fonts para ser usada na página.
+
+   Estamos importando as variações de peso 400 (normal) e 700 (negrito). */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/*
+
+  Guia de Estilo e Cores Utilizadas:
+
+  Este arquivo CSS define a aparência da página de homenagem.
+
+  As cores foram escolhidas para criar um ambiente festivo e agradável,
+
+  incorporando tons que remetem à identidade visual do Unilavras e à
+
+  temática do Dia das Mães.
+
+  Cores Principais:
+
+  - Azul Brilhante (#009DE0): Usado em elementos interativos como botões e para
+
+    destacar termos técnicos de forma amigável.
+
+  - Azul Escuro (#021D36): Aplicado em textos principais e títulos para
+
+    assegurar boa leitura e um toque de sofisticação.
+
+  - Rosa Forte (#d81b60): Empregado em elementos temáticos, como os corações,
+
+    para adicionar vivacidade e calor, característicos da celebração.
+
+  - Verde Sucesso (#28a745): Para mensagens de feedback positivo.
+
+  Fontes:
+
+  - Principal: 'Montserrat', sans-serif (importada do Google Fonts).
+
+  - Código: 'Courier New', Courier, monospace.
+
+*/
+
+/* Estilização do elemento <body> (o corpo inteiro da página) */
+
+body {
+
+    font-family: 'Montserrat', sans-serif; /* Nova fonte principal */
+
+    font-weight: 400; /* Peso normal da fonte para o corpo */
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    background: linear-gradient(135deg, #e6f7ff, #b3e0f7); /* Gradiente de azul suave */
+
+    color: #021D36; /* Azul Escuro Unilavras para o texto principal */
+
+    text-align: center;
+
+    overflow-x: hidden; /* Evita scroll horizontal desnecessário */
+
+    overflow-y: auto; /* Permite scroll vertical se o conteúdo for maior que a tela */
+
+    -webkit-font-smoothing: antialiased; /* Melhora a renderização da fonte em alguns navegadores */
+
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+/* Estilização para elementos com a classe "container" (a nossa caixa principal de conteúdo) */
+
+.container {
+
+    background-color: rgba(255, 255, 255, 0.97); /* Fundo branco levemente mais opaco e suave */
+
+    padding: 30px 40px;
+
+    border-radius: 20px; /* Bordas um pouco mais arredondadas */
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* Sombra um pouco mais suave e moderna */
+
+    max-width: 600px;
+
+    width: 90%; /* Garante que o container não toque as bordas em telas muito pequenas antes do max-width */
+
+    margin-top: 20px; /* Adiciona uma margem no topo */
+
+    margin-bottom: 20px; /* Adiciona uma margem na base */
+
+}
+
+/* Estilização para o elemento <h1> (título principal) */
+
+h1 {
+
+    color: #021D36;
+
+    font-size: 2.5em;
+
+    margin-bottom: 20px; /* Aumenta um pouco a margem inferior */
+
+    font-weight: 700; /* Peso negrito da fonte Montserrat */
+
+}
+
+/* Estilização para os elementos <p> (parágrafos) */
+
+p {
+
+    font-size: 1.1em;
+
+    line-height: 1.7; /* Aumenta um pouco a altura da linha para melhor legibilidade */
+
+    margin-bottom: 25px; /* Aumenta um pouco a margem inferior */
+
+}
+
+/* Estilização para elementos com a classe "code-metaphor" */
+
+.code-metaphor {
+
+    font-family: 'Courier New', Courier, monospace;
+
+    color: #009DE0;
+
+    background-color: #f0f4f8; /* Fundo um pouco mais suave para o "código" */
+
+    padding: 3px 7px; /* Ajuste no padding */
+
+    border-radius: 5px; /* Bordas um pouco mais arredondadas */
+
+    font-weight: bold;
+
+}
+
+/* Estilização para o elemento <button> */
+
+button {
+
+    background-color: #009DE0;
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 28px; /* Aumenta um pouco o padding para um botão mais "clicável" */
+
+    font-size: 1.1em;
+
+    font-weight: 700; /* Negrito para o texto do botão */
+
+    border-radius: 10px; /* Bordas mais arredondadas */
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Sombra sutil azulada */
+
+}
+
+/* Estilização para o botão quando o mouse está sobre ele (estado :hover) */
+
+button:hover {
+
+    background-color: #007bb5;
+
+    transform: translateY(-3px) scale(1.03); /* Efeito de levantar e aumentar um pouco */
+
+    box-shadow: 0 7px 15px rgba(0, 100, 200, 0.3); /* Sombra mais pronunciada no hover */
+
+}
+
+/* Estilização para o botão quando está sendo clicado (estado :active) */
+
+button:active {
+
+    transform: translateY(-1px) scale(1.01); /* Efeito sutil ao clicar */
+
+    box-shadow: 0 4px 8px rgba(0, 100, 200, 0.25);
+
+}
+
+/* Estilização para o elemento com o ID "specialMessage" */
+
+#specialMessage {
+
+    margin-top: 30px; /* Aumenta um pouco a margem */
+
+    font-size: 1.3em;
+
+    color: #28a745;
+
+    font-weight: 700; /* Negrito */
+
+    opacity: 0;
+
+    transition: opacity 1s ease-in-out;
+
+    min-height: 35px; /* Ajuste na altura mínima */
+
+    padding: 5px; /* Adiciona um pequeno padding interno */
+
+}
+
+/* Estilização para elementos com a classe "footer" */
+
+.footer {
+
+    margin-top: 20px;
+
+    font-size: 0.9em;
+
+    color: #556270; /* Cor de texto um pouco mais suave para o rodapé */
+
+}
+
+/* Estilização para elementos com a classe "heart" */
+
+.heart {
+
+    position: fixed;
+
+    color: #d81b60;
+
+    font-size: 1.5rem;
+
+    top: -1.5rem;
+
+    animation: fall 5s linear infinite;
+
+    opacity: 0.8;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    z-index: -1; /* Coloca os corações atrás do conteúdo principal se necessário */
+
+}
+
+/* Animação "fall" para os corações */
+
+@keyframes fall {
+
+    to {
+
+        transform: translateY(105vh);
+
+        opacity: 0;
+
+    }
+
+}
+
+/* Estilização para o elemento com o ID "logoUnilavras" */
+
+#logoUnilavras {
+
+    max-width: 150px;
+
+    height: auto;
+
+    display: block;
+
+    margin: 30px auto 20px auto; /* Ajuste nas margens */
+
+}
+
+/* --- Media Queries para Responsividade em Celulares --- */
+
+/* Estilos aplicados quando a largura da tela é 600 pixels ou menos */
+
+@media (max-width: 600px) {
+
+    .container {
+
+        padding: 25px 20px; /* Reduz o padding horizontal */
+
+        width: 90%; /* Garante que o container não fique colado nas bordas */
+
+        margin-top: 15px;
+
+        margin-bottom: 15px;
+
+    }
+
+    h1 {
+
+        font-size: 2em; /* Reduz o tamanho da fonte do título principal */
+
+        margin-bottom: 15px;
+
+    }
+
+    p {
+
+        font-size: 1em; /* Reduz o tamanho da fonte dos parágrafos */
+
+        line-height: 1.6; /* Ajusta a altura da linha */
+
+        margin-bottom: 20px;
+
+    }
+
+    .code-metaphor {
+
+        padding: 2px 5px;
+
+        font-size: 0.9em; /* Ajusta o tamanho da fonte do "código" se necessário */
+
+    }
+
+    button {
+
+        padding: 12px 22px; /* Reduz um pouco o padding do botão */
+
+        font-size: 1em; /* Reduz o tamanho da fonte do botão */
+
+    }
+
+    #specialMessage {
+
+        font-size: 1.15em; /* Reduz o tamanho da fonte da mensagem especial */
+
+        margin-top: 25px;
+
+        min-height: 30px;
+
+    }
+
+    #logoUnilavras {
+
+        max-width: 120px; /* Reduz o tamanho máximo da logo */
+
+        margin: 25px auto 15px auto;
+
+    }
+
+    .footer {
+
+        font-size: 0.8em; /* Reduz o tamanho da fonte do rodapé */
+
+    }
+
+}
+
+/* Ajustes adicionais para telas bem pequenas (ex: iPhone 5/SE) */
+
+@media (max-width: 360px) {
+
+    .container {
+
+        padding: 20px 15px;
+
+    }
+
+    h1 {
+
+        font-size: 1.8em;
+
+    }
+
+    p {
+
+        font-size: 0.95em;
+
+    }
+
+    button {
+
+        padding: 10px 18px;
+
+        font-size: 0.95em;
+
+    }
+
+    #specialMessage {
+
+        font-size: 1.05em;
+
+    }
+
+    #logoUnilavras {
+
+        max-width: 100px;
+
+    }
+
+    .footer {
+
+        font-size: 0.75em;
+
+    }
+
+}
+
